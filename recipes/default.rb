@@ -62,3 +62,5 @@ directory node['optoro_memcached']['log_dir'] do
   group 'root'
 end
 
+include_recipe 'optoro_memcached::monit'
+include_recipe 'optoro_memcached::logrotate'
