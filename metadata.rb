@@ -1,0 +1,12 @@
+name             'optoro_memcached'
+maintainer       'YOUR_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures optoro_memcached'
+long_description 'Installs/Configures optoro_memcached'
+version          '0.1.0'
+
+depends 'memcached'
+depends 'newrelic'
+depends 'optoro_monit'
+depends 'optoro_logrotate'
