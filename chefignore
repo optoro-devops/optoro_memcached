@@ -1,7 +1,6 @@
 # Put files/directories that should be ignored in this file when uploading
 # or sharing to the community site.
 # Lines that start with '# ' are comments.
-
 # OS generated files #
 ######################
 .DS_Store
@@ -9,11 +8,9 @@ Icon?
 nohup.out
 ehthumbs.db
 Thumbs.db
-
 # SASS #
 ########
 .sass-cache
-
 # EDITORS #
 ###########
 \#*
@@ -30,7 +27,6 @@ tmtags
 .project
 .settings
 mkmf.log
-
 ## COMPILED ##
 ##############
 a.out
@@ -42,7 +38,6 @@ a.out
 *.dll
 *.exe
 */rdoc/
-
 # Testing #
 ###########
 .watchr
@@ -53,7 +48,6 @@ test/*
 features/*
 Guardfile
 Procfile
-
 # SCM #
 #######
 .git
@@ -66,29 +60,26 @@ Procfile
 */.bzr/*
 */.hg/*
 */.svn/*
-
 # Berkshelf #
 #############
+Berksfile
+Berksfile.lock
 cookbooks/*
 tmp
-
 # Cookbooks #
 #############
 CONTRIBUTING
 CHANGELOG*
-
 # Strainer #
 ############
 Colanderfile
 Strainerfile
 .colander
 .strainer
-
 # Vagrant #
 ###########
 .vagrant
 Vagrantfile
-
 # Travis #
 ##########
 .travis.yml

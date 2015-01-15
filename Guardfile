@@ -1,8 +1,24 @@
-# A sample Guardfile
-# More info at https://github.com/guard/guard#readme
+guard 'foodcritic', :cookbook_paths => '.', :all_on_start => false do
+  watch(/^attributes\/(.+)\.rb$/)
+  watch(/^providers\/(.+)\.rb/)
+  watch(/^recipes\/(.+)\.rb$/)
+  watch(/^resources\/(.+)\.rb/)
+  watch(/^templates\/(.+)/)
+  watch('metadata.rb')
+end
 
-## Uncomment and set this to only include directories you want to watch
-# directories %(app lib config test spec feature)
+guard 'kitchen' do
+  watch(/test\/.+/)
+  watch(/^recipes\/(.+)\.rb$/)
+  watch(/^attributes\/(.+)\.rb$/)
+  watch(/^files\/(.+)/)
+  watch(/^templates\/(.+)/)
+  watch(/^providers\/(.+)\.rb/)
+  watch(/^resources\/(.+)\.rb/)
+end
 
-## Uncomment to clear the screen before every task
-# clearing :on
+guard :rspec, cmd: 'bundle exec rspec', :all_on_start => false do
+  watch(/^spec\/(.+)_spec\.rb$/)
+  watch(/^(recipes)\/(.+)\.rb$/)    { |m| "spec/#{m[1]}_spec.rb"  }
+  watch('spec/spec_helper.rb')      { 'spec' }
+end

@@ -1,9 +1,9 @@
-source "https://supermarket.getchef.com"
+source 'http://berks-api.optoro.io'
 
 metadata
 
-cookbook 'apt'
-cookbook 'memcached'
-cookbook 'newrelic'
-cookbook 'optoro_monit', path: '../optoro_monit'
-cookbook 'optoro_logrotate', path: '../optoro_logrotate'
+cookbook 'apt', '~> 2.6.1'
+cookbook 'memcached', '~> 1.7.2'
+cookbook 'newrelic', '~> 2.6.0'
+cookbook 'optoro_monit', '~> 0.1.0'
+cookbook 'optoro_logrotate', '~> 0.1.1'

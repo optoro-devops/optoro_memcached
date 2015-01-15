@@ -1,0 +1,8 @@
+LineLength:
+  Enabled: false
+HashSyntax:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+Next:
+  Enabled: false

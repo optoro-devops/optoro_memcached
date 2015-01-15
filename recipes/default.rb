@@ -10,7 +10,7 @@
 include_recipe 'apt'
 include_recipe 'memcached::default'
 
-package "openjdk-7-jre-headless"
+package 'openjdk-7-jre-headless'
 
 directory '/var/optoro' do
   mode 00755
@@ -27,11 +27,11 @@ end
 
 execute 'extract-newrelic-npi' do
   action :nothing
-  command "tar -xvf /var/optoro/newrelic-npi.tar.gz -C /var/optoro"
-  not_if { ::File.exists?('/var/optoro/newrelic-npi') }
+  command 'tar -xvf /var/optoro/newrelic-npi.tar.gz -C /var/optoro'
+  not_if { ::File.exist?('/var/optoro/newrelic-npi') }
 end
 
-template "/var/optoro/newrelic-npi/plugins/com.newrelic.plugins.memcached/newrelic_memcached_plugin-2.0.1/config/plugin.json" do
+template '/var/optoro/newrelic-npi/plugins/com.newrelic.plugins.memcached/newrelic_memcached_plugin-2.0.1/config/plugin.json' do
   mode 00644
   owner 'root'
   group 'root'

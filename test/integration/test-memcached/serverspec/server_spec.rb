@@ -67,6 +67,6 @@ describe 'logrotate recipe' do
 
   describe file('/etc/logrotate.d/memcached') do
     it { should be_file }
-    it { should contain "/var/log/memcached/*.log" }
+    it { should contain '/var/log/memcached/*.log' }
   end
 end
