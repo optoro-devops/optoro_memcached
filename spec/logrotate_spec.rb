@@ -12,8 +12,8 @@ describe 'optoro_memcached::default' do
           end.converge(described_recipe)
         end
 
-        it 'includes the optoro_logrotate::default recipe' do
-          expect(chef_run).to include_recipe('optoro_logrotate::default')
+        it 'includes the logrotate::default recipe' do
+          expect(chef_run).to include_recipe('logrotate::default')
         end
       end
     end
