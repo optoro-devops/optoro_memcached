@@ -4,7 +4,7 @@ maintainer_email 'afreidah@optoro.com'
 license 'All rights reserved'
 description 'Installs/Configures optoro_memcached'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '0.1.2'
+version '0.1.3'
 
 depends 'memcached', '~> 1.7.2'
 depends 'newrelic', '~> 2.6.0'
