@@ -1,4 +1,4 @@
-include_recipe 'optoro_logrotate::default'
+include_recipe 'logrotate'
 
 logrotate_app 'memcached' do
   path "#{node['optoro_memcached']['log_dir']}/*.log"
