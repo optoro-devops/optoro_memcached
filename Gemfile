@@ -17,4 +17,5 @@ group :development do
   gem 'rspec', '~> 3.1.0'
   gem 'strainer', '~> 3.4.0'
   gem 'rubocop', '~> 0.27.1'
+  gem 'chef-rewind', '~> 0.0.9'
 end
