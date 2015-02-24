@@ -69,8 +69,8 @@ describe 'optoro_memcached::default' do
           expect(chef_run).to start_service('newrelic_plugin_com.newrelic.plugins.memcached')
         end
 
-        it 'creates the memcached-monit.conffile' do
-          expect(chef_run).to create_template('/etc/memcached-monit.conf').with(
+        it 'creates the memcached confile' do
+          expect(chef_run).to create_template('/etc/memcached.conf').with(
             user: 'root',
             group: 'root',
             mode: 0644
@@ -87,6 +87,10 @@ describe 'optoro_memcached::default' do
             owner: 'root',
             group: 'root'
           )
+        end
+
+        it 'create the memcached monit config file' do
+          expect(chef_run).to create_cookbook_file('/etc/monit/conf.d/memcached-monit.conf')
         end
 
         it 'creates the /var/optoro directory' do
