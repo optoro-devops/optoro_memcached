@@ -51,7 +51,7 @@ describe 'monit recipe' do
     it { should be_directory }
   end
 
-  describe file('/etc/monit/conf.d/memcached.conf') do
+  describe file('/etc/monit/conf.d/memcached-monit.conf') do
     it { should be_file }
   end
 end
