@@ -13,11 +13,11 @@ describe 'optoro_memcached::default' do
         end
 
         it 'creates the monit config files' do
-          expect(chef_run).to create_cookbook_file('/etc/monit/conf.d/memcached.conf')
+          expect(chef_run).to create_cookbook_file('/etc/monit/conf.d/memcached-monit.conf')
         end
 
         it 'notifies the monit service to restart' do
-          resource = chef_run.cookbook_file('/etc/monit/conf.d/memcached.conf')
+          resource = chef_run.cookbook_file('/etc/monit/conf.d/memcached-monit.conf')
           expect(resource).to notify('service[monit]').to(:restart).delayed
         end
       end

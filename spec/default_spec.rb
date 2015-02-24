@@ -89,10 +89,6 @@ describe 'optoro_memcached::default' do
           )
         end
 
-        it 'create the memcached monit config file' do
-          expect(chef_run).to create_cookbook_file('/etc/monit/conf.d/memcached-monit.conf')
-        end
-
         it 'creates the /var/optoro directory' do
           expect(chef_run).to create_directory('/var/optoro').with(
             user: 'root',
