@@ -69,7 +69,7 @@ describe 'optoro_memcached::default' do
           expect(chef_run).to start_service('newrelic_plugin_com.newrelic.plugins.memcached')
         end
 
-        it 'creates the memcached.conffile' do
+        it 'creates the memcached confile' do
           expect(chef_run).to create_template('/etc/memcached.conf').with(
             user: 'root',
             group: 'root',
