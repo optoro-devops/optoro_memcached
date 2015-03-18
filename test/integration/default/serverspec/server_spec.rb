@@ -7,41 +7,9 @@ describe 'basic install' do
     it { should be_installed }
   end
 
-  describe package('openjdk-7-jre-headless') do
-    it { should be_installed }
-  end
-
   describe service('memcached') do
     it { should be_enabled }
     it { should be_running }
-  end
-
-  describe service('newrelic_plugin_com.newrelic.plugins.memcached') do
-    it { should be_enabled }
-    it { should be_running }
-  end
-
-  describe file('/var/optoro/newrelic-npi/plugins/com.newrelic.plugins.memcached/newrelic_memcached_plugin-2.0.1/config/plugin.json') do
-    it { should be_file }
-    it { should be_owned_by 'root' }
-    it { should be_grouped_into 'root' }
-    it { should be_mode '644' }
-  end
-
-  describe file('/var/optoro/newrelic-npi') do
-    it { should be_directory }
-    it { should be_owned_by 'root' }
-    it { should be_grouped_into 'root' }
-    it { should be_mode '755' }
-  end
-end
-
-describe 'configuration' do
-  describe file('/etc/init.d/newrelic_plugin_com.newrelic.plugins.memcached') do
-    it { should be_file }
-    it { should be_owned_by 'root' }
-    it { should be_grouped_into 'root' }
-    it { should be_mode '755' }
   end
 end
 
