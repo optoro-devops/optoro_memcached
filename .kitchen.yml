@@ -19,3 +19,11 @@ suites:
   run_list:
     - recipe[apt]
     - recipe[optoro_memcached::default]
+  attributes:
+    monit:
+      poll_start_delay: 0
+      mailserver:
+        host: localhost
+        port: 25
+      mail_format:
+        from: monit@localhost
