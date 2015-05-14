@@ -29,3 +29,4 @@ end
 
 include_recipe 'optoro_memcached::monit'
 include_recipe 'optoro_memcached::logrotate'
+include_recipe 'optoro_metrics::memcached'
