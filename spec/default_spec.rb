@@ -27,27 +27,7 @@ describe 'optoro_memcached::default' do
           expect(chef_run).to create_template('/etc/memcached.conf').with(
             user: 'root',
             group: 'root',
-            mode: 0644
-          )
-        end
-
-        it 'notifies the memcached service when the conf file is created' do
-          resource = chef_run.template('/etc/memcached.conf')
-          expect(resource).to notify('service[memcached]').to(:restart).delayed
-        end
-
-        it 'creates the log directory for memcached' do
-          expect(chef_run).to create_directory('/var/log/memcached').with(
-            owner: 'root',
-            group: 'root'
-          )
-        end
-
-        it 'creates the /var/optoro directory' do
-          expect(chef_run).to create_directory('/var/optoro').with(
-            user: 'root',
-            group: 'root',
-            mode: 0755
+            mode: '0644'
           )
         end
       end
