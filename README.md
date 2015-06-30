@@ -17,9 +17,9 @@ Installs/Configures optoro_memcached
 
 # Attributes
 
-* `node['optoro_memcached']['log_dir']` -  Defaults to `/var/log/memcached`.
-* `node['optoro_memcached']['log_path']` -  Defaults to `#{node['optoro_memcached']['log_dir']}/memcached.log`.
-* `node['optoro_memcached']['mem_size_mb']` -  Defaults to `512`.
+* `node['memcached']['memory']` -  Defaults to `512`.
+* `node['memcached']['user']` -  Defaults to `nobody`.
+* `node['memcached']['group']` -  Defaults to `nogroup`.
 * `node['monit']['address']` -  Defaults to `localhost`.
 
 # Recipes
@@ -30,6 +30,6 @@ Installs/Configures optoro_memcached
 
 # License and Maintainer
 
-Maintainer:: Alex Freidah (<afreidah@optoro.com>)
+Maintainer:: DevOps (<devops@optoro.com>)
 
 License:: MIT
