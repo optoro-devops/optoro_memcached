@@ -6,14 +6,13 @@ Installs/Configures optoro_memcached
 
 ## Platform:
 
-* Ubuntu (= 14.04)
+* ubuntu (= 14.04)
 
 ## Cookbooks:
 
 * memcached (~> 1.7.2)
 * optoro_monit
 * logrotate
-* optoro_metrics
 
 # Attributes
 
@@ -25,8 +24,8 @@ Installs/Configures optoro_memcached
 # Recipes
 
 * optoro_memcached::default - Installs memcached
-* optoro_memcahced::logrotate - Installs logrotate config for memcached
-* optoro_memcahced::monit - Installs monit for memcached service
+* optoro_memcached::logrotate - Installs logrotate config for memcached
+* optoro_memcached::monit - Installs monit for memcached service
 
 # License and Maintainer
 

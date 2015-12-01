@@ -16,7 +16,6 @@ describe 'optoro_memcached::default' do
           memcached::default
           optoro_memcached::monit
           optoro_memcached::logrotate
-          optoro_metrics::memcached
         ).each do |recipe|
           it 'includes #{recipe}' do
             expect(chef_run).to include_recipe(recipe)
