@@ -14,7 +14,6 @@ describe 'optoro_memcached::default' do
 
         %w(
           memcached::default
-          optoro_memcached::monit
           optoro_memcached::logrotate
         ).each do |recipe|
           it 'includes #{recipe}' do
