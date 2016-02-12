@@ -13,17 +13,6 @@ describe 'basic install' do
   end
 end
 
-# we cannot test that monit is running in a docker setup since it is an upstart job
-describe 'monit recipe' do
-  describe file('/etc/monit') do
-    it { should be_directory }
-  end
-
-  describe file('/etc/monit/conf.d/memcached-monit.conf') do
-    it { should be_file }
-  end
-end
-
 describe 'logrotate recipe' do
   describe file('/etc/logrotate.conf') do
     it { should be_file }

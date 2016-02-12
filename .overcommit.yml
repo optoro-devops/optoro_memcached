@@ -1,0 +1,16 @@
+PreCommit:
+  RuboCop:
+    enabled: true
+    on_warn: fail # Treat all warnings as failures
+
+  TrailingWhitespace:
+    enabled: true
+
+  Foodcritic:
+    enabled: true
+
+  ShellCheck:
+    enabled: false
+
+  CookbookVersion:
+    enabled: true

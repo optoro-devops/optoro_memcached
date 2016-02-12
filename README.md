@@ -11,7 +11,6 @@ Installs/Configures optoro_memcached
 ## Cookbooks:
 
 * memcached (~> 1.7.2)
-* optoro_monit
 * logrotate
 
 # Attributes
@@ -19,13 +18,11 @@ Installs/Configures optoro_memcached
 * `node['memcached']['memory']` -  Defaults to `512`.
 * `node['memcached']['user']` -  Defaults to `nobody`.
 * `node['memcached']['group']` -  Defaults to `nogroup`.
-* `node['monit']['address']` -  Defaults to `localhost`.
 
 # Recipes
 
 * optoro_memcached::default - Installs memcached
 * optoro_memcached::logrotate - Installs logrotate config for memcached
-* optoro_memcached::monit - Installs monit for memcached service
 
 # License and Maintainer
 
