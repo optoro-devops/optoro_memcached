@@ -16,9 +16,8 @@ guard :bundler do
   watch('Gemfile')
 end
 
-guard :rspec, cmd: 'bundle exec rspec -fd -r spec_helper spec/', :all_on_start => false do
-  watch(%r{^spec/.+(_spec|Spec)\.(js|coffee)})
-  watch(%r{^spec/.+_spec.rb$})
+guard :rspec, cmd: 'bundle exec rspec -fd -r spec_helper', :all_on_start => false do
+  watch(%r{^spec/(.+)_spec.rb$}) { |m| "spec/#{m[1]}_spec.rb" }
   watch(%r{^(recipes)/(.+).rb$}) { 'spec' }
   watch(%r{^(attributes)/(.+).rb$}) { 'spec' }
   watch(%r{^(providers)/(.+).rb$}) { 'spec' }
