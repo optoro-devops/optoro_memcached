@@ -5,7 +5,7 @@ license 'MIT'
 description 'Installs/Configures optoro_memcached'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 source_url 'https://github.com/optoro-devops/optoro_memcached'
-version '0.2.4'
+version '0.2.5'
 
 supports 'ubuntu', '= 14.04'
 
