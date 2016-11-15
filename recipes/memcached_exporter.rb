@@ -25,7 +25,7 @@ service 'memcached_exporter' do
   supports :restart => true
 end
 
-consul_definition 'instance-metrics' do
+consul_definition 'memcached-metrics' do
   type 'service'
   parameters(
     port: 9150,
