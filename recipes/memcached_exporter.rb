@@ -1,5 +1,3 @@
-include_recipe 'optoro_consul::client'
-
 tar_extract 'https://s3.amazonaws.com/latest-container-assets/memcached_exporter.tar.gz' do
   user 'root'
   group 'root'
@@ -23,19 +21,4 @@ end
 service 'memcached_exporter' do
   action [:enable, :start]
   supports :restart => true
-end
-
-consul_definition 'memcached-metrics' do
-  type 'service'
-  parameters(
-    port: 9150,
-    tags: [node['fqdn']],
-    enableTagOverride: false,
-    check: {
-      interval: '10s',
-      timeout: '5s',
-      http: 'http://localhost:9150/metrics'
-    }
-  )
-  notifies :reload, 'consul_service[consul]', :delayed
 end
