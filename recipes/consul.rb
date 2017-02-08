@@ -1,7 +1,7 @@
 include_recipe 'optoro_consul::client'
 
 optoro_consul_service node['optoro_consul']['service_name'] do
-  port 11211
+  port 11_211
   params node['optoro_consul']['service']
 end
 
