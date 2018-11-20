@@ -10,11 +10,11 @@ consul_definition 'memcached-metrics' do
   parameters(
     port: 9150,
     tags: [node['fqdn']],
-    enableTagOverride: false,
+    enable_tag_override: false,
     check: {
       interval: '10s',
       timeout: '5s',
-      script: 'curl -s --fail http://localhost:9150/metrics &> /dev/null'
+      args: '["curl", "-s", "--fail", "http://localhost:9150/metrics", "&>", "/dev/null"]'
     }
   )
   notifies :reload, 'consul_service[consul]', :delayed
