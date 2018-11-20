@@ -14,7 +14,7 @@ consul_definition 'memcached-metrics' do
     check: {
       interval: '10s',
       timeout: '5s',
-      script: 'curl -s --fail http://localhost:9150/metrics &> /dev/null'
+      args: '["curl", "-s", "--fail", "http://localhost:9150/metrics", "&>", "/dev/null"]'
     }
   )
   notifies :reload, 'consul_service[consul]', :delayed
